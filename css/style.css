@@ -250,20 +250,39 @@ input[type="text"]:focus{
 /* ————————— Scrollbars ————————— */
 /* —————————————————————————————— */
 
-.chat-body::-webkit-scrollbar{
-    width: 15px;
-    background-color: rgb(255, 255, 255);
-}
-
-.contacts-body::-webkit-scrollbar{
+::-webkit-scrollbar{
     width: 15px;
     background-color: rgb(240, 240, 240);
 }
 
+::-webkit-scrollbar-thumb{
+    background-color: rgb(177, 177, 177);
+}
+
+::-webkit-scrollbar-button:end:vertical:increment{
+    background: transparent url(../img/svg/chevron-down.svg) scroll no-repeat center;
+    background-size: contain;
+    display: block;
+    height: 15px;
+    width: 15px;
+}
+
+::-webkit-scrollbar-button:start:vertical:decrement{
+    background: transparent url(../img/svg/chevron-up.svg) scroll no-repeat center;
+    background-size: contain;
+    display: block;
+    height: 15px;
+    width: 15px;
+    padding:5px;
+}
+
+
 
 /* TO DO
 
-—— Scrollbars
+—— Scrollbars **** OK ****
+
+
 —— Vuejs contacts
 —— Vertical resize: no search
 
