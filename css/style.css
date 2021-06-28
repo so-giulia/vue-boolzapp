@@ -14,6 +14,7 @@
 
 body{
     background-color: rgb(215, 219, 215);
+    font-family: 'Roboto', sans-serif;
 }
 
 .bg-head{
@@ -30,6 +31,7 @@ body{
     position: relative;
 }
 
+
 /* ———————————————————————— */
 /* ————————— Flex ————————— */
 /* ———————————————————————— */
@@ -42,6 +44,7 @@ body{
 .justify-start {justify-content: flex-start;}
 .align-center {align-items: center;}
 .align-self-end {align-self: flex-end;}
+
 
 /* ——————————————————————————— */
 /* —————————— Layout ————————— */
@@ -69,15 +72,27 @@ main{
     height:90px;
 }
 
-.app-container header,
-main > footer{
+.app-container header{
     background-color: rgb(234, 234, 234);
+    padding:0 15px;
 }
 
 aside > header{
     border-right: 1px solid rgb(214, 214, 214);
 }
 
+.app-container header img{
+    width:60px;
+    height:60px;
+    border-radius: 50%;
+    margin-right:10px;
+}
+
+.icons-container i{
+    font-size:1.3rem;
+    color: rgb(177, 177, 177);
+    margin-left:15px;
+}
 
 /* —————————————————————————— */
 /* —————————— Aside ————————— */
@@ -103,6 +118,11 @@ aside > .contacts-body{
 /* ————————— Main ————————— */
 /* ———————————————————————— */
 
+.last-log{
+    color: #757575;
+    font-size:.8rem;
+}
+
 main footer{
     background-color: rgb(243, 238, 234);
 
@@ -116,8 +136,25 @@ main footer{
 .chat-body{
     width:100%;
     height: calc(92vh - 180px);
+    max-height: calc(92vh - 180px);
     background: transparent url(../img/mine.jpg) scroll center repeat;
     background-size: contain;
 
-    overflow-y:scroll;
+    overflow: -moz-scrollbars-vertical; 
+    overflow-y: scroll;  
+}
+
+
+/* —————————————————————————————— */
+/* ————————— Scrollbars ————————— */
+/* —————————————————————————————— */
+
+.chat-body::-webkit-scrollbar{
+    width: 15px;
+    background-color: rgb(255, 255, 255);
+}
+
+.contacts-body::-webkit-scrollbar{
+    width: 15px;
+    background-color: rgb(240, 240, 240);
 }
