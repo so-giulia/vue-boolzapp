@@ -83,8 +83,9 @@ main, main footer{
     padding:0 20px;
 }
 
-aside > header{
-    border-right: 1px solid rgb(214, 214, 214);
+main > header,
+main > footer{
+    border-left: 1px solid rgb(214, 214, 214);
 }
 
 .app-container header img{
