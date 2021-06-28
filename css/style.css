@@ -50,6 +50,11 @@ body{
 /* —————————— Layout ————————— */
 /* ——————————————————————————— */
 
+.container-nested{
+    width:85%;
+    margin:auto;
+}
+
 .app-container{
     width:80%;
     height:92vh;
@@ -61,11 +66,11 @@ body{
 }
 
 aside{
-    width: 35%;
+    width: 400px;
 }
 
 main{
-    width: 65%;
+    width: calc(100% - 400px);
 }
 
 .h-90{
@@ -74,7 +79,7 @@ main{
 
 .app-container header{
     background-color: rgb(234, 234, 234);
-    padding:0 15px;
+    padding:0 20px;
 }
 
 aside > header{
@@ -94,6 +99,17 @@ aside > header{
     margin-left:15px;
 }
 
+
+/* —————————————————————————— */
+/* —————————— Text —————————— */
+/* —————————————————————————— */
+
+.p-2{
+    color: #757575;
+    font-size:.8rem;
+}
+
+
 /* —————————————————————————— */
 /* —————————— Aside ————————— */
 /* —————————————————————————— */
@@ -102,14 +118,62 @@ aside > header{
     background-color: rgb(142, 218, 252);
 }
 
+.banner-text-container a,
+.banner-text-container a:hover,
+.banner-text-container a:focus,
+.banner-text-container a:visited,
+.banner-text-container a:active{
+    color: #757575;
+    text-decoration: underline;
+}
+
+.bell{
+    width:3rem;
+    height:3rem;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    margin-right:10px;
+}
+
+.bell i{
+    font-size:1.3rem;
+    color: rgb(142, 218, 252);
+    text-align:center;
+    line-height:3rem;
+}
+
 .search-container{
-    height:63px;
+    height:60px;
     background-color: rgb(250, 250, 250);
+    padding:10px;
+}
+
+.search-box{
+    width:100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.search-box i{
+    width:65px;
+    padding:0 25px;
+    color: rgb(177, 177, 177);
+}
+
+.search-box input[type="search"]{
+    height:100%;
+    width:calc(100% - 65px);
+    padding:10px;
+    border:none;
+}
+
+.search-box input[type="search"]::placeholder{
+    color: rgb(216, 217, 218);
 }
 
 aside > .contacts-body{
     background-color: rgb(255, 255, 255);
-    height: calc(92vh - 243px);
+    height: calc(92vh - 240px);
     overflow-y:scroll;
 }
 
@@ -118,18 +182,13 @@ aside > .contacts-body{
 /* ————————— Main ————————— */
 /* ———————————————————————— */
 
-.last-log{
-    color: #757575;
-    font-size:.8rem;
-}
-
 main footer{
     background-color: rgb(243, 238, 234);
 
     position:fixed;
     bottom:0;
     right:0;
-    width:65%;
+    width:calc(100% - 400px);
     z-index: 10;
 } 
 
