@@ -98,6 +98,7 @@ aside > header{
     font-size:1.3rem;
     color: rgb(177, 177, 177);
     margin-left:15px;
+    cursor: pointer;
 }
 
 
@@ -229,6 +230,7 @@ footer .container-nested{
     color: rgb(121, 121, 121);
     text-align: center;
     font-size: 1.3rem;
+    cursor: pointer;
 }
 
 .msg-container input[type="text"]{
@@ -281,9 +283,9 @@ input[type="text"]:focus{
 /* TO DO
 
 —— Scrollbars **** OK ****
+—— Vuejs contacts **** OK ****
 
 
-—— Vuejs contacts
 —— Vertical resize: no search
 
 */
