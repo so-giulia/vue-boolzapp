@@ -80,7 +80,7 @@
                 <div class="contacts-body">
                         <!-- contacts start -->
                         <div class="contacts row align-center" v-for="item in contacts">
-                            <div class="container-nested row justify-start align-center">
+                            <div class="container-nested row align-center">
                                 <img :src=" 'img/avatar' + item.avatar + '.jpg' " v-bind:alt=" 'Avatar' + item.avatar">
                                 <p class="p-1">{{item.name}}</p>
                             </div> 
@@ -118,7 +118,32 @@
 
                 <!-- chat body start -->
                 <div class="chat-body">
-                    <div class="chat-child"></div>
+                    <div class="row justify-end">
+                        <div class="message from-others">
+                            prova prova prova prova prova prova
+                            <div class="date">
+                                20/03/2020 16:35:00
+                            </div>
+                        </div>    
+                    </div>
+                    
+                    <div class="row justify-start">
+                        <div class="message from-me">
+                            prova prova prova ciao
+                            <div class="date">
+                                20/03/2020 16:35:00
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-end">
+                        <div class="message from-others">
+                            prova prova prova prova prova prova
+                            <div class="date">
+                                20/03/2020 16:35:00
+                            </div>
+                        </div>    
+                    </div>
                 </div>
                 <!-- chat body end -->
 

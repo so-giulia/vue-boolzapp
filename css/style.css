@@ -38,10 +38,15 @@ body{
 
 .row {display: flex; flex-wrap: wrap;}
 .row-vert {flex-direction:column;}
+
 .justify-evenly {justify-content: space-evenly;}
 .justify-center {justify-content: center;}
 .justify-between {justify-content: space-between;}
 .justify-start {justify-content: flex-start;}
+.justify-start {justify-content: flex-end;}
+
+.align-start {align-items: flex-start;}
+.align-end {align-items: flex-end;}
 .align-center {align-items: center;}
 .align-stretch {align-items: stretch;}
 
@@ -184,6 +189,11 @@ aside > .contacts-body{
     height:100px;
     width:100%;
     border-bottom:1px solid rgb(245, 245, 245);
+    cursor: pointer;
+}
+
+.contacts:hover{
+    background-color: rgb(245, 245, 245);;
 }
 
 .contacts img{
@@ -217,10 +227,34 @@ footer .container-nested{
     height: calc(92vh - 180px);
     max-height: calc(92vh - 180px);
     background: transparent url(../img/mine.jpg) scroll center repeat;
-    background-size: contain;
+    background-size: 50%;
+    padding:20px;
 
     overflow: -moz-scrollbars-vertical; 
     overflow-y: scroll;  
+}
+
+.message{
+    border-radius: 8px;
+    padding:12px 20px;
+    font-size: .9rem;
+    box-shadow: 0 3px 3px rgba(136, 136, 136, .2);
+}
+
+.from-others{
+    background-color: rgb(255, 255, 255);
+}
+
+.from-me{
+    background-color: rgb(221, 247, 200);
+}
+
+.date{
+    align-self:flex-end;
+    text-align: right;
+    font-size: .6rem;
+    margin-top: 4px;
+    color: rgb(121, 121, 121);
 }
 
 .msg-container{
@@ -278,15 +312,3 @@ input[type="text"]:focus{
     width: 15px;
     padding:5px;
 }
-
-
-
-/* TO DO
-
-—— Scrollbars **** OK ****
-—— Vuejs contacts **** OK ****
-
-
-—— Vertical resize: no search
-
-*/
