@@ -43,7 +43,8 @@ body{
 .justify-between {justify-content: space-between;}
 .justify-start {justify-content: flex-start;}
 .align-center {align-items: center;}
-.align-self-end {align-self: flex-end;}
+.align-stretch {align-items: stretch;}
+
 
 
 /* ——————————————————————————— */
@@ -66,11 +67,11 @@ body{
 }
 
 aside{
-    width: 400px;
+    width: 380px;
 }
 
-main{
-    width: calc(100% - 400px);
+main, main footer{
+    width: calc(100% - 380px);
 }
 
 .h-90{
@@ -177,6 +178,19 @@ aside > .contacts-body{
     overflow-y:scroll;
 }
 
+.contacts{
+    height:100px;
+    width:100%;
+    border-bottom:1px solid rgb(245, 245, 245);
+}
+
+.contacts img{
+    width:60px;
+    height:60px;
+    border-radius: 50%;
+    margin-right:10px;
+}
+
 
 /* ———————————————————————— */
 /* ————————— Main ————————— */
@@ -188,9 +202,13 @@ main footer{
     position:fixed;
     bottom:0;
     right:0;
-    width:calc(100% - 400px);
     z-index: 10;
+    padding:20px 0;
 } 
+
+footer .container-nested{
+    width:90%;
+}
 
 .chat-body{
     width:100%;
@@ -201,6 +219,30 @@ main footer{
 
     overflow: -moz-scrollbars-vertical; 
     overflow-y: scroll;  
+}
+
+.msg-container{
+    height:100%;
+}
+
+.msg-container i{
+    color: rgb(121, 121, 121);
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.msg-container input[type="text"]{
+    width:calc(100% - 80px);
+    height:100%;
+    border-radius: 10px;
+    border: none;
+    padding: 0 20px;
+}
+
+input[type="text"]:focus{
+    outline: none;
+    border: 2px solid rgb(0, 96, 223);
+    box-sizing: padding-box;
 }
 
 
@@ -217,3 +259,12 @@ main footer{
     width: 15px;
     background-color: rgb(240, 240, 240);
 }
+
+
+/* TO DO
+
+—— Scrollbars
+—— Vuejs contacts
+—— Vertical resize: no search
+
+*/
