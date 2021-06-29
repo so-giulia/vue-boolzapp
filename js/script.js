@@ -167,10 +167,11 @@ const app = new Vue(
         },
         methods: {
             getChat(indice){
+
                 const chat = document.getElementById("chat-body");
                 const msg = this.contacts[indice].messages;
 
-                chat.innerHTML += '';
+                chat.innerHTML = '';
 
                 for(let i=0; i<msg.length; i++){
 
@@ -195,7 +196,6 @@ const app = new Vue(
                     </div>
                     `
                 }    
-                
                 
             }
         }
