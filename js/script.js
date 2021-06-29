@@ -102,18 +102,18 @@ const app = new Vue(
                     messages:[
                         {
                         date: '20/03/2020 16:30:00',
-                        text: 'Ciao come stai?',
-                        status: 'sent'
-                        },
-                        {
-                        date: '20/03/2020 16:30:55',
-                        text: 'Bene grazie! Stasera ci vediamo?',
+                        text: 'Ho visto un video bellissimo che ti faccio vedere stasera',
                         status: 'received'
                         },
                         {
-                        date: '20/03/2020 16:35:00',
-                        text: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                        date: '20/03/2020 16:30:55',
+                        text: 'Ahahah, non vedo l\'ora!',
                         status: 'sent'
+                        },
+                        {
+                        date: '20/03/2020 16:35:00',
+                        text: 'Ci vediamo stasera al bar :D',
+                        status: 'received'
                         }
                     ]
                 },
@@ -125,17 +125,17 @@ const app = new Vue(
                     messages:[
                         {
                         date: '20/03/2020 16:30:00',
-                        text: 'Ciao come stai?',
+                        text: 'Com\'è andato l\'esame?',
                         status: 'sent'
                         },
                         {
                         date: '20/03/2020 16:30:55',
-                        text: 'Bene grazie! Stasera ci vediamo?',
+                        text: '30 e lode!!!!',
                         status: 'received'
                         },
                         {
                         date: '20/03/2020 16:35:00',
-                        text: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                        text: 'Bravissimaaaaa!',
                         status: 'sent'
                         }
                     ]
@@ -148,17 +148,17 @@ const app = new Vue(
                     messages:[
                         {
                         date: '20/03/2020 16:30:00',
-                        text: 'Ciao come stai?',
+                        text: 'Tu hai messo i soldi per il regalo?',
                         status: 'sent'
                         },
                         {
                         date: '20/03/2020 16:30:55',
-                        text: 'Bene grazie! Stasera ci vediamo?',
+                        text: 'Sisi ieri! Li ho dati a Matteo',
                         status: 'received'
                         },
                         {
                         date: '20/03/2020 16:35:00',
-                        text: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                        text: 'Ah perfetto, ti segno nella lista, grazie!',
                         status: 'sent'
                         }
                     ]
@@ -167,9 +167,11 @@ const app = new Vue(
         },
         methods: {
             getChat(indice){
-
                 const chat = document.getElementById("chat-body");
                 const msg = this.contacts[indice].messages;
+                const user = document.getElementById("user-container");
+
+                console.log(this.contacts[indice].avatar);
 
                 chat.innerHTML = '';
 
@@ -195,8 +197,19 @@ const app = new Vue(
                             </div>    
                     </div>
                     `
-                }    
+                }   
                 
+                //svuoto l'immagine in header
+                user.innerHTML = '';
+
+                //cambio l'immagine in header
+                user.innerHTML += `
+                <img src="img/avatar${this.contacts[indice].avatar}.jpg" alt="Avatar${this.contacts[indice].avatar}">
+                <div class="username-container row row-vert">
+                    <p class="names">${this.contacts[indice].name}</p>
+                    <p class="p-2 last-log">Ultimo accesso oggi alle</p>
+                </div>
+                `
             }
         }
     }
