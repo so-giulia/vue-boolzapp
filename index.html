@@ -122,25 +122,35 @@
 
                 <!-- chat body start -->
                 <div class="chat-body" id="chat-body">
-                    <div v-for="(item,index) in (contacts[this.counter].messages)" class="row">
+
+                    <!-- messages start -->
+                    <div v-for="(item,index) in (contacts[this.counter].messages)">
+                        
                         <!-- message sent start -->
-                        <div v-if="item.status=='sent'" class="message sent">
-                            {{item.text}}
-                            <div class="date">
-                                {{item.date}}
+                        <div v-if="item.status=='sent'" class="row justify-start">
+                            <div v-if="item.status=='sent'" class="message sent">
+                                {{item.text}}
+                                <div class="date">
+                                    {{item.date}}
+                                </div>
                             </div>
                         </div>
                         <!-- message sent end -->
                         
                         <!-- message received start -->
-                        <div v-else class="message received">
-                            {{item.text}}
-                            <div class="date">
-                                {{item.date}}
-                            </div>
-                        </div>  
+                        <div v-if="item.status=='received'" class="row justify-end">
+                            <div v-if="item.status=='received'" class="message received">
+                                {{item.text}}
+                                <div class="date">
+                                    {{item.date}}
+                                </div>
+                            </div>  
+                        </div>
                         <!-- message received end -->
-                    </div>  
+                        
+                    </div> 
+                    <!-- messages end -->
+
                 </div>
                 <!-- chat body end -->
 
