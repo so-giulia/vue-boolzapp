@@ -50,6 +50,8 @@ body{
 .align-center {align-items: center;}
 .align-stretch {align-items: stretch;}
 
+.align-self-start {align-self: flex-start;}
+.align-self-end {align-self: flex-end;}
 
 
 /* ——————————————————————————— */

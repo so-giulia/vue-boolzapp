@@ -122,23 +122,25 @@
 
                 <!-- chat body start -->
                 <div class="chat-body" id="chat-body">
-                    <div v-for="(item,index) in (contacts[this.counter].messages)" v-if="item.status=='sent'" class="message-row row justify-start" >
+                    <div v-for="(item,index) in (contacts[this.counter].messages)" class="row">
+                        <!-- message sent start -->
                         <div v-if="item.status=='sent'" class="message sent">
                             {{item.text}}
                             <div class="date">
                                 {{item.date}}
                             </div>
-                        </div>  
-                    </div>
-
-                    <div v-for="(item,index) in (contacts[this.counter].messages)" v-if="item.status=='received'" class="message-row row justify-end" >
-                        <div v-if="item.status=='received'" class="message received">
+                        </div>
+                        <!-- message sent end -->
+                        
+                        <!-- message received start -->
+                        <div v-else class="message received">
                             {{item.text}}
                             <div class="date">
                                 {{item.date}}
                             </div>
                         </div>  
-                    </div>
+                        <!-- message received end -->
+                    </div>  
                 </div>
                 <!-- chat body end -->
 
