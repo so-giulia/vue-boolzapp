@@ -193,7 +193,11 @@ aside > .contacts-body{
 }
 
 .contacts:hover{
-    background-color: rgb(245, 245, 245);;
+    background-color: rgb(245, 245, 245);
+}
+
+.thischat{
+    background-color: rgb(245, 245, 245);
 }
 
 .contacts img{

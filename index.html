@@ -79,12 +79,12 @@
                 <!-- contacts body start -->
                 <div class="contacts-body">
                         <!-- contacts start -->
-                        <div class="contacts row align-center" v-for="(item, index) in contacts" @click="getChat(index)">
-                            <div class="container-nested row align-center">
+                        <ul class="contacts row align-center" v-for="(item, index) in contacts" @click="getChat(item, index)">
+                            <li class="container-nested row align-center">
                                 <img :src=" 'img/avatar' + item.avatar + '.jpg' " v-bind:alt=" 'Avatar' + item.avatar">
                                 <p class="p-1">{{item.name}}</p>
-                            </div> 
-                        </div>
+                            </li> 
+                        </ul>
                         <!-- contacts end -->
                 </div>
                 <!-- contacts body end -->
@@ -98,11 +98,14 @@
                     <!-- user start -->
                     <div id="user-container" class="user-container row justify-start align-center">
                         <!-- avatar start -->
-                        <!-- <img id="avatars" src="img/avatar_1.jpg" alt="Avatar 1"> -->
+                        <img :src="'img/avatar' + contacts[this.counter].avatar + '.jpg'" alt="Avatar">
                         <!-- avatar end -->
 
                         <!-- username start -->
-                        <div class="username-container row row-vert"></div>
+                        <div id="username-container" class="username-container row row-vert">
+                            Michele
+                            <p class="p-2">Ultimo accesso alle</p>
+                        </div>
                         <!-- username end -->
                     </div>
                     <!-- user end -->
@@ -119,7 +122,23 @@
 
                 <!-- chat body start -->
                 <div class="chat-body" id="chat-body">
+                    <div v-for="(item,index) in (contacts[this.counter].messages)" v-if="item.status=='sent'" class="message-row row justify-start" >
+                        <div v-if="item.status=='sent'" class="message sent">
+                            {{item.text}}
+                            <div class="date">
+                                {{item.date}}
+                            </div>
+                        </div>  
+                    </div>
 
+                    <div v-for="(item,index) in (contacts[this.counter].messages)" v-if="item.status=='received'" class="message-row row justify-end" >
+                        <div v-if="item.status=='received'" class="message received">
+                            {{item.text}}
+                            <div class="date">
+                                {{item.date}}
+                            </div>
+                        </div>  
+                    </div>
                 </div>
                 <!-- chat body end -->
 

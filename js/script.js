@@ -2,6 +2,7 @@ const app = new Vue(
     {
         el: '#app',
         data:{
+            counter: 0,
             contacts:[
                 {
                 name: 'Michele',
@@ -166,50 +167,14 @@ const app = new Vue(
             ]
         },
         methods: {
-            getChat(indice){
-                const chat = document.getElementById("chat-body");
-                const msg = this.contacts[indice].messages;
-                const user = document.getElementById("user-container");
+            getChat(item, index){
+                const username = document.getElementById("username-container");
+                this.counter = index;
 
-                console.log(this.contacts[indice].avatar);
-
-                chat.innerHTML = '';
-
-                for(let i=0; i<msg.length; i++){
-
-                    //aggiungo classi per allineamenti in base allo status del messaggio
-                    let msgAlignment = document.querySelectorAll(".message-row");
-
-                    if(msg[i].status == 'sent'){
-                        msgAlignment = 'justify-start';
-                    }else{
-                        msgAlignment = 'justify-end';
-                    }
-
-                    //stampo le conversazioni
-                    chat.innerHTML += `
-                    <div class="message-row row ${msgAlignment}">
-                            <div class="message ${msg[i].status}">
-                            ${msg[i].text}
-                                <div class="date">
-                                    ${msg[i].date}
-                                </div>
-                            </div>    
-                    </div>
-                    `
-                }   
-                
-                //svuoto l'immagine in header
-                user.innerHTML = '';
-
-                //cambio l'immagine in header
-                user.innerHTML += `
-                <img src="img/avatar${this.contacts[indice].avatar}.jpg" alt="Avatar${this.contacts[indice].avatar}">
-                <div class="username-container row row-vert">
-                    <p class="names">${this.contacts[indice].name}</p>
-                    <p class="p-2 last-log">Ultimo accesso oggi alle</p>
-                </div>
-                `
+                username.innerHTML = `
+                ${item.name}
+                <p class="p-2">Ultimo accesso alle</p>
+                `;
             }
         }
     }
