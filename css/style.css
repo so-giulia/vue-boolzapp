@@ -239,13 +239,16 @@ footer .container-nested{
     padding:12px 20px;
     font-size: .9rem;
     box-shadow: 0 3px 3px rgba(136, 136, 136, .2);
+    margin-bottom: 20px;
 }
 
-.from-others{
+.received{
+    align-self: flex-start;
     background-color: rgb(255, 255, 255);
 }
 
-.from-me{
+.sent{
+    align-self: flex-end;
     background-color: rgb(221, 247, 200);
 }
 

@@ -56,17 +56,17 @@ const app = new Vue(
                     messages:[
                         {
                         date: '20/03/2020 16:30:00',
-                        text: 'Ciao come stai?',
+                        text: 'Ciao! Allora andiamo a cena stasera?',
                         status: 'sent'
                         },
                         {
                         date: '20/03/2020 16:30:55',
-                        text: 'Bene grazie! Stasera ci vediamo?',
+                        text: 'Si certo! Va bene per le 20?',
                         status: 'received'
                         },
                         {
                         date: '20/03/2020 16:35:00',
-                        text: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                        text: 'Ok prenotato!',
                         status: 'sent'
                         }
                     ]
@@ -79,17 +79,17 @@ const app = new Vue(
                     messages:[
                         {
                         date: '20/03/2020 16:30:00',
-                        text: 'Ciao come stai?',
+                        text: 'Ciao! Ho visto la mail, tutto ok',
                         status: 'sent'
                         },
                         {
                         date: '20/03/2020 16:30:55',
-                        text: 'Bene grazie! Stasera ci vediamo?',
+                        text: 'Perfetto! Facciamo una call di repilogo?',
                         status: 'received'
                         },
                         {
                         date: '20/03/2020 16:35:00',
-                        text: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                        text: 'Si mi connetto subito',
                         status: 'sent'
                         }
                     ]
@@ -164,6 +164,41 @@ const app = new Vue(
                     ]
                 }
             ]
+        },
+        methods: {
+            getChat(indice){
+                const chat = document.getElementById("chat-body");
+                const msg = this.contacts[indice].messages;
+
+                chat.innerHTML += '';
+
+                for(let i=0; i<msg.length; i++){
+
+                    //aggiungo classi per allineamenti in base allo status del messaggio
+                    let msgAlignment = document.querySelectorAll(".message-row");
+
+                    if(msg[i].status == 'sent'){
+                        msgAlignment = 'justify-start';
+                    }else{
+                        msgAlignment = 'justify-end';
+                    }
+
+                    //stampo le conversazioni
+                    chat.innerHTML += `
+                    <div class="message-row row ${msgAlignment}">
+                            <div class="message ${msg[i].status}">
+                            ${msg[i].text}
+                                <div class="date">
+                                    ${msg[i].date}
+                                </div>
+                            </div>    
+                    </div>
+                    `
+                }    
+                
+                
+            }
         }
     }
 );
+
