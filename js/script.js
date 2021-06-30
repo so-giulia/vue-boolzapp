@@ -178,15 +178,28 @@ const app = new Vue(
                 `;
             },
             writeMsg(){
-                this.contacts[this.counter].messages.push(
-                    {
-                    date: '10/01/2020 15:30:55',
-                    text: this.newMsg,
-                    status: 'sent'
-                    }
-                );
-
-                this.newMsg = '';
+                if(this.newMsg.length > 0){
+                    this.contacts[this.counter].messages.push(
+                        {
+                        date: '10/01/2020 15:30:55',
+                        text: this.newMsg,
+                        status: 'sent'
+                        }
+                    );
+                    this.newMsg = '';
+                    this.getReply();     
+                }         
+            },
+            getReply(){
+                setTimeout(() =>{
+                    this.contacts[this.counter].messages.push(
+                        {
+                        date: '10/01/2020 15:30:55',
+                        text: 'ok',
+                        status: 'received'
+                        }
+                    );
+                }, 1000);
             }
         }
     }
