@@ -242,6 +242,10 @@ const app = new Vue(
                 }else{
                     this.contacts[this.counter].messages[index].current = true;
                 }
+            },
+            deleteMsg(index){
+                console.log(this.contacts[this.counter].messages);
+                this.contacts[this.counter].messages.splice(index, 1);
             }
         },
         computed: {

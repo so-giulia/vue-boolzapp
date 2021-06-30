@@ -144,7 +144,7 @@
                                 <!-- options start -->
                                 <ul :class="(item.current) ? 'options-sent-active' : 'msg-options-sent'">
                                     <li>Info</li>
-                                    <li id="delete">Elimina</li>
+                                    <li class="delete" @click="deleteMsg(index)">Elimina</li>
                                 </ul>
                                 <!-- options end -->
                             </div>
