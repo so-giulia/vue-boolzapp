@@ -230,9 +230,18 @@ const app = new Vue(
                 }, 1000);
             },
             showSentOptions(index){
-                //!vorrei far cambiare il mio current a true in base all'indice
-                this.contacts[this.counter].messages[index].current = true;
-                console.log(this.contacts[this.counter].messages[index].current);
+                if(this.contacts[this.counter].messages[index].current == true){
+                    this.contacts[this.counter].messages[index].current = false;
+                }else{
+                    this.contacts[this.counter].messages[index].current = true;
+                }
+            },
+            showRecOptions(index){
+                if(this.contacts[this.counter].messages[index].current == true){
+                    this.contacts[this.counter].messages[index].current = false;
+                }else{
+                    this.contacts[this.counter].messages[index].current = true;
+                }
             }
         },
         computed: {

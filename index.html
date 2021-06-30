@@ -137,15 +137,14 @@
                                 </span>
 
                                 <!-- hover see chevron start -->
-                                <span class="opt-bg"></span>
-                                <span class="chevron" @click="showSentOptions(index)"></span>
+                                <span :class="(item.current) ? 'opt-bg-sent-show' : 'opt-bg-sent'"></span>
+                                <span :class="(item.current) ? 'chevron-show' : 'chevron'" @click="showSentOptions(index)"></span>
                                 <!-- hover see chevron end -->
 
                                 <!-- options start -->
-                                <!-- !se qui aggiungo una :class non mi si vede più nulla -->
-                                <ul class="msg-options-sent">
-                                    <li>Info messaggio</li>
-                                    <li id="delete">Elimina messaggio</li>
+                                <ul :class="(item.current) ? 'options-sent-active' : 'msg-options-sent'">
+                                    <li>Info</li>
+                                    <li id="delete">Elimina</li>
                                 </ul>
                                 <!-- options end -->
                             </div>
@@ -165,12 +164,12 @@
                                 </span>
 
                                 <!-- hover see chevron start -->
-                                <span class="opt-bg"></span>
-                                <span class="chevron"></span>
+                                <span :class="(item.current) ? 'opt-bg-received-show' : 'opt-bg-received'"></span>
+                                <span :class="(item.current) ? 'chevron-show' : 'chevron'" @click="showRecOptions(index)"></span>
                                 <!-- hover see chevron end -->
 
                                 <!-- options start -->
-                                <ul class="msg-options-received">
+                                <ul :class="(item.current) ? 'options-received-active' : 'msg-options-received'">
                                     <li>Rispondi</li>
                                     <li>Inoltra</li>
                                 </ul>

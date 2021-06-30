@@ -257,7 +257,12 @@ footer .container-nested{
     display: inline-block;
 }
 
-div.message.sent > .opt-bg{
+.opt-bg-sent,
+.opt-bg-received{
+    opacity: 0;
+}
+
+.opt-bg-sent{
     content: '';
     display: inline-block;
     width: 35px;
@@ -271,11 +276,9 @@ div.message.sent > .opt-bg{
     z-index: 10;
     right: 5px;
     top: 5px;
-
-    opacity: 0;
 }
 
-div.message.received > .opt-bg{
+.opt-bg-received{
     content: '';
     display: inline-block;
     width: 35px;
@@ -289,9 +292,45 @@ div.message.received > .opt-bg{
     z-index: 10;
     right: 5px;
     top: 5px;
-
-    opacity: 0;
 }
+
+.opt-bg-sent-show{
+    opacity: 1;
+
+    content: '';
+    display: inline-block;
+    width: 35px;
+    height: 80%;
+    padding: 0 5px 0 15px;
+    margin-left: 15px;
+    background-color: rgb(221, 247, 200);
+    filter: blur(4px);
+
+    position: absolute;
+    z-index: 10;
+    right: 5px;
+    top: 5px;
+}
+
+
+.opt-bg-received-show{
+    opacity: 1;
+
+    content: '';
+    display: inline-block;
+    width: 35px;
+    height: 80%;
+    padding: 0 5px 0 15px;
+    margin-left: 15px;
+    background-color: rgb(255, 255, 255);
+    filter: blur(4px);
+
+    position: absolute;
+    z-index: 10;
+    right: 5px;
+    top: 5px;
+}
+
 
 .chevron::before{
     content: url(../img/svg/chevron-down.svg);
@@ -308,7 +347,8 @@ div.message.received > .opt-bg{
     opacity: 0;
 }
 
-.message:hover > .opt-bg{
+.message:hover > .opt-bg-sent,
+.message:hover > .opt-bg-received{
     opacity: 1 !important;
 }
 
@@ -318,10 +358,18 @@ div.message.received > .opt-bg{
     transition: transform .2s ease;
 }
 
-.chevron-show{
+.chevron-show::before{
     opacity: 1;
+
+    content: url(../img/svg/chevron-down.svg);
+    width: 10px;
+    height: 10px;
+    z-index: 100;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    padding: 0 5px;
     transform: translate(-3px, 0);
-    transition: transform .2s ease;
 }
 
 .msg-options-sent,
