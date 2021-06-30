@@ -4,6 +4,7 @@ const app = new Vue(
         data:{
             counter: 0,
             newMsg: '',
+            search:'',
             activeUl: 0,
             contacts:[
                 {
@@ -204,6 +205,11 @@ const app = new Vue(
                         }
                     );
                 }, 1000);
+            },
+        },
+        computed: {
+            filteredContacts(){
+                return this.contacts.filter(item => item.name.toLowerCase().includes(this.search.toLowerCase()));
             }
         }
     }

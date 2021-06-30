@@ -71,7 +71,7 @@
                 <div class="search-container row justify-center align-center">
                     <div class="search-box row align-center">
                         <i class="fas fa-search"></i>
-                        <input type="search" placeholder="Cerca o inizia una nuova chat">
+                        <input type="search" name="search" id="search" v-model="search" placeholder="Cerca o inizia una nuova chat">
                     </div>
                 </div>
                 <!-- search end -->
@@ -79,7 +79,7 @@
                 <!-- contacts body start -->
                 <div class="contacts-body">
                         <!-- contacts start -->
-                        <ul class="contacts row align-center" :class="{active: index === activeUl}" v-for="(item, index) in contacts" @click="getChat(item, index)">
+                        <ul class="contacts row align-center" :class="{active: index === activeUl}" v-for="(item, index) in filteredContacts" @click="getChat(item, index)">
                             <li class="container-nested row align-center">
                                 <img :src=" 'img/avatar' + item.avatar + '.jpg' " v-bind:alt=" 'Avatar' + item.avatar">
                                 <p class="p-1">{{item.name}}</p>
