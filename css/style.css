@@ -198,7 +198,7 @@ aside > .contacts-body{
     background-color: rgb(245, 245, 245);
 }
 
-.thischat{
+.active{
     background-color: rgb(245, 245, 245);
 }
 
@@ -236,7 +236,7 @@ footer .container-nested{
     background-size: 50%;
     padding:20px;
 
-    overflow: -moz-scrollbars-vertical; 
+    /* overflow: -moz-scrollbars-vertical;  */
     overflow-y: scroll;  
 }
 
@@ -246,6 +246,87 @@ footer .container-nested{
     font-size: .9rem;
     box-shadow: 0 3px 3px rgba(136, 136, 136, .2);
     margin-bottom: 20px;
+    cursor: pointer;
+
+    position: relative;
+}
+
+.message > p{
+    width:100%;
+}
+
+.msg-container{
+    display: inline-block;
+}
+
+div.message.sent > .opt-bg{
+    content: '';
+    display: inline-block;
+    width: 35px;
+    height: 80%;
+    padding: 0 5px 0 15px;
+    margin-left: 15px;
+    background-color: rgb(221, 247, 200);
+    filter: blur(4px);
+
+    position: absolute;
+    z-index: 10;
+    right: 5px;
+    top: 5px;
+
+    opacity: 0;
+}
+
+div.message.received > .opt-bg{
+    content: '';
+    display: inline-block;
+    width: 35px;
+    height: 80%;
+    padding: 0 5px 0 15px;
+    margin-left: 15px;
+    background-color: rgb(255, 255, 255);
+    filter: blur(4px);
+
+    position: absolute;
+    z-index: 10;
+    right: 5px;
+    top: 5px;
+
+    opacity: 0;
+}
+
+.chevron::before{
+    content: url(../img/svg/chevron-down.svg);
+    width: 10px;
+    height: 10px;
+    z-index: 100;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    padding: 0 5px;
+    transform: translate(0, 0);
+    transition: transform .2s ease;
+
+    opacity: 0;
+}
+
+.message:hover > .opt-bg{
+    opacity: 1 !important;
+}
+
+.message:hover .chevron::before{
+    opacity: 1;
+    transform: translate(-3px, 0);
+    transition: transform .2s ease;
+}
+
+.msg-options{
+    width:50px;
+    height:50px;
+
+    align-self: flex-end;
+    z-index: 10;
+    list-style: none;
 }
 
 .received{
@@ -283,6 +364,7 @@ footer .container-nested{
     border-radius: 10px;
     border: none;
     padding: 0 20px;
+    margin:0 2%;
 }
 
 input[type="text"]:focus{

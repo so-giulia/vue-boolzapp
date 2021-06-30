@@ -4,6 +4,7 @@ const app = new Vue(
         data:{
             counter: 0,
             newMsg: '',
+            activeUl: 0,
             contacts:[
                 {
                 name: 'Michele',
@@ -170,12 +171,15 @@ const app = new Vue(
         methods: {
             getChat(item, index){
                 const username = document.getElementById("username-container");
+                
+                this.activeUl = index;
                 this.counter = index;
 
                 username.innerHTML = `
                 ${item.name}
                 <p class="p-2">Ultimo accesso alle</p>
                 `;
+
             },
             writeMsg(){
                 if(this.newMsg.length > 0){

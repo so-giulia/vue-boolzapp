@@ -79,7 +79,7 @@
                 <!-- contacts body start -->
                 <div class="contacts-body">
                         <!-- contacts start -->
-                        <ul class="contacts row align-center" v-for="(item, index) in contacts" @click="getChat(item, index)">
+                        <ul class="contacts row align-center" :class="{active: index === activeUl}" v-for="(item, index) in contacts" @click="getChat(item, index)">
                             <li class="container-nested row align-center">
                                 <img :src=" 'img/avatar' + item.avatar + '.jpg' " v-bind:alt=" 'Avatar' + item.avatar">
                                 <p class="p-1">{{item.name}}</p>
@@ -129,22 +129,43 @@
                         <!-- message sent start -->
                         <div v-if="item.status=='sent'" class="row justify-start">
                             <div v-if="item.status=='sent'" class="message sent">
-                                {{item.text}}
-                                <div class="date">
-                                    {{item.date}}
-                                </div>
+                                <span class="msg-container">
+                                    <p>{{item.text}}</p>
+                                    <div class="date">
+                                        {{item.date}}
+                                    </div>
+                                </span>
+
+                                <span class="opt-bg"></span>
+                                <span class="chevron"></span>
                             </div>
+
+
+                            <!-- <ul class="msg-options">
+                                <li>ciauz</li>
+                                <li>ciauz 2</li>
+                            </ul> -->
                         </div>
                         <!-- message sent end -->
                         
                         <!-- message received start -->
                         <div v-if="item.status=='received'" class="row justify-end">
                             <div v-if="item.status=='received'" class="message received">
-                                {{item.text}}
-                                <div class="date">
-                                    {{item.date}}
-                                </div>
-                            </div>  
+                                <span class="msg-container">
+                                    <p>{{item.text}}</p>
+                                    <div class="date">
+                                        {{item.date}}
+                                    </div>
+                                </span>
+
+                                <span class="opt-bg"></span>
+                                <span class="chevron"></span>
+                            </div> 
+                            
+                            <!-- <ul class="msg-options">
+                                <li>ciauz</li>
+                                <li>ciauz 2</li>
+                            </ul> -->
                         </div>
                         <!-- message received end -->
                         
