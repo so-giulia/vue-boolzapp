@@ -15,17 +15,20 @@ const app = new Vue(
                     {
                     date: '10/01/2020 15:30:55',
                     text: 'Hai portato a spasso il cane?',
-                    status: 'sent'
+                    status: 'sent',
+                    current: false
                     },
                     {
                     date: '10/01/2020 15:50:00',
                     text: 'Ricordati di dargli da mangiare',
-                    status: 'sent'
+                    status: 'sent',
+                    current: false
                     },
                     {
                     date: '10/01/2020 16:15:22',
                     text: 'Tutto fatto!',
-                    status: 'received'
+                    status: 'received',
+                    current: false
                     }
                 ]
                 },
@@ -38,17 +41,20 @@ const app = new Vue(
                     {
                     date: '20/03/2020 16:30:00',
                     text: 'Ciao come stai?',
-                    status: 'sent'
+                    status: 'sent',
+                    current: false
                     },
                     {
                     date: '20/03/2020 16:30:55',
                     text: 'Bene grazie! Stasera ci vediamo?',
-                    status: 'received'
+                    status: 'received',
+                    current: false
                     },
                     {
                     date: '20/03/2020 16:35:00',
                     text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                    status: 'sent'
+                    status: 'sent',
+                    current: false
                     }
                 ]
                 },
@@ -61,17 +67,20 @@ const app = new Vue(
                         {
                         date: '20/03/2020 16:30:00',
                         text: 'Ciao! Allora andiamo a cena stasera?',
-                        status: 'sent'
+                        status: 'sent',
+                        current: false
                         },
                         {
                         date: '20/03/2020 16:30:55',
                         text: 'Si certo! Va bene per le 20?',
-                        status: 'received'
+                        status: 'received',
+                        current: false
                         },
                         {
                         date: '20/03/2020 16:35:00',
                         text: 'Ok prenotato!',
-                        status: 'sent'
+                        status: 'sent',
+                        current: false
                         }
                     ]
                 },
@@ -84,17 +93,20 @@ const app = new Vue(
                         {
                         date: '20/03/2020 16:30:00',
                         text: 'Ciao! Ho visto la mail, tutto ok',
-                        status: 'sent'
+                        status: 'sent',
+                        current: false
                         },
                         {
                         date: '20/03/2020 16:30:55',
                         text: 'Perfetto! Facciamo una call di repilogo?',
-                        status: 'received'
+                        status: 'received',
+                        current: false
                         },
                         {
                         date: '20/03/2020 16:35:00',
                         text: 'Si mi connetto subito',
-                        status: 'sent'
+                        status: 'sent',
+                        current: false
                         }
                     ]
                 },
@@ -107,17 +119,20 @@ const app = new Vue(
                         {
                         date: '20/03/2020 16:30:00',
                         text: 'Ho visto un video bellissimo che ti faccio vedere stasera',
-                        status: 'received'
+                        status: 'received',
+                        current: false
                         },
                         {
                         date: '20/03/2020 16:30:55',
                         text: 'Ahahah, non vedo l\'ora!',
-                        status: 'sent'
+                        status: 'sent',
+                        current: false
                         },
                         {
                         date: '20/03/2020 16:35:00',
                         text: 'Ci vediamo stasera al bar :D',
-                        status: 'received'
+                        status: 'received',
+                        current: false
                         }
                     ]
                 },
@@ -130,17 +145,20 @@ const app = new Vue(
                         {
                         date: '20/03/2020 16:30:00',
                         text: 'Com\'è andato l\'esame?',
-                        status: 'sent'
+                        status: 'sent',
+                        current: false
                         },
                         {
                         date: '20/03/2020 16:30:55',
                         text: '30 e lode!!!!',
-                        status: 'received'
+                        status: 'received',
+                        current: false
                         },
                         {
                         date: '20/03/2020 16:35:00',
                         text: 'Bravissimaaaaa!',
-                        status: 'sent'
+                        status: 'sent',
+                        current: false
                         }
                     ]
                 },
@@ -153,17 +171,20 @@ const app = new Vue(
                         {
                         date: '20/03/2020 16:30:00',
                         text: 'Tu hai messo i soldi per il regalo?',
-                        status: 'sent'
+                        status: 'sent',
+                        current: false
                         },
                         {
                         date: '20/03/2020 16:30:55',
                         text: 'Sisi ieri! Li ho dati a Matteo',
-                        status: 'received'
+                        status: 'received',
+                        current: false
                         },
                         {
                         date: '20/03/2020 16:35:00',
                         text: 'Ah perfetto, ti segno nella lista, grazie!',
-                        status: 'sent'
+                        status: 'sent',
+                        current: false
                         }
                     ]
                 }
@@ -188,7 +209,8 @@ const app = new Vue(
                         {
                         date: '10/01/2020 15:30:55',
                         text: this.newMsg,
-                        status: 'sent'
+                        status: 'sent',
+                        current: false
                         }
                     );
                     this.newMsg = '';
@@ -201,11 +223,17 @@ const app = new Vue(
                         {
                         date: '10/01/2020 15:30:55',
                         text: 'ok',
-                        status: 'received'
+                        status: 'received',
+                        current: false
                         }
                     );
                 }, 1000);
             },
+            showSentOptions(index){
+                //!vorrei far cambiare il mio current a true in base all'indice
+                this.contacts[this.counter].messages[index].current = true;
+                console.log(this.contacts[this.counter].messages[index].current);
+            }
         },
         computed: {
             filteredContacts(){

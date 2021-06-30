@@ -127,8 +127,8 @@
                     <div v-for="(item,index) in (contacts[this.counter].messages)">
                         
                         <!-- message sent start -->
-                        <div v-if="item.status=='sent'" class="row justify-start">
-                            <div v-if="item.status=='sent'" class="message sent">
+                        <div v-if="item.status=='sent'" class="row justify-start prelative">
+                            <div v-if="item.status=='sent'" class="message sent prelative">
                                 <span class="msg-container">
                                     <p>{{item.text}}</p>
                                     <div class="date">
@@ -136,21 +136,27 @@
                                     </div>
                                 </span>
 
+                                <!-- hover see chevron start -->
                                 <span class="opt-bg"></span>
-                                <span class="chevron"></span>
+                                <span class="chevron" @click="showSentOptions(index)"></span>
+                                <!-- hover see chevron end -->
+
+                                <!-- options start -->
+                                <!-- !se qui aggiungo una :class non mi si vede più nulla -->
+                                <ul class="msg-options-sent">
+                                    <li>Info messaggio</li>
+                                    <li id="delete">Elimina messaggio</li>
+                                </ul>
+                                <!-- options end -->
                             </div>
-
-
-                            <!-- <ul class="msg-options">
-                                <li>ciauz</li>
-                                <li>ciauz 2</li>
-                            </ul> -->
                         </div>
                         <!-- message sent end -->
+
+                        
                         
                         <!-- message received start -->
-                        <div v-if="item.status=='received'" class="row justify-end">
-                            <div v-if="item.status=='received'" class="message received">
+                        <div v-if="item.status=='received'" class="row justify-end prelative">
+                            <div v-if="item.status=='received'" class="message received prelative">
                                 <span class="msg-container">
                                     <p>{{item.text}}</p>
                                     <div class="date">
@@ -158,17 +164,22 @@
                                     </div>
                                 </span>
 
+                                <!-- hover see chevron start -->
                                 <span class="opt-bg"></span>
                                 <span class="chevron"></span>
+                                <!-- hover see chevron end -->
+
+                                <!-- options start -->
+                                <ul class="msg-options-received">
+                                    <li>Rispondi</li>
+                                    <li>Inoltra</li>
+                                </ul>
+                                <!-- options end -->
                             </div> 
+
                             
-                            <!-- <ul class="msg-options">
-                                <li>ciauz</li>
-                                <li>ciauz 2</li>
-                            </ul> -->
                         </div>
                         <!-- message received end -->
-                        
                     </div> 
                     <!-- messages end -->
 

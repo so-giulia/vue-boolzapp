@@ -247,8 +247,6 @@ footer .container-nested{
     box-shadow: 0 3px 3px rgba(136, 136, 136, .2);
     margin-bottom: 20px;
     cursor: pointer;
-
-    position: relative;
 }
 
 .message > p{
@@ -320,13 +318,51 @@ div.message.received > .opt-bg{
     transition: transform .2s ease;
 }
 
-.msg-options{
-    width:50px;
-    height:50px;
+.chevron-show{
+    opacity: 1;
+    transform: translate(-3px, 0);
+    transition: transform .2s ease;
+}
 
-    align-self: flex-end;
-    z-index: 10;
+.msg-options-sent,
+.msg-options-received{
+    display: none;
+}
+
+.options-received-active{
+    display: block;
+    position: absolute;
+    right:5px;
+    bottom:50px;
+    z-index: 120;
+
+    background-color: #fff;
+    font-size: .8rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+}
+
+.options-sent-active{
+    display: block;
+    position: absolute;
+    top: 35px;
+    right:10px;
+    z-index: 120;
+
+    background-color: #fff;
+    font-size: .8rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+}
+
+.options-sent-active li,
+.options-received-active li{
+    padding: 15px 20px;
     list-style: none;
+    cursor: pointer;
+}
+
+.options-sent-active li:hover,
+.options-received-active li:hover{
+    background-color: rgb(245, 245, 245);
 }
 
 .received{
