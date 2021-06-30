@@ -3,6 +3,7 @@ const app = new Vue(
         el: '#app',
         data:{
             counter: 0,
+            newMsg: '',
             contacts:[
                 {
                 name: 'Michele',
@@ -175,6 +176,17 @@ const app = new Vue(
                 ${item.name}
                 <p class="p-2">Ultimo accesso alle</p>
                 `;
+            },
+            writeMsg(){
+                this.contacts[this.counter].messages.push(
+                    {
+                    date: '10/01/2020 15:30:55',
+                    text: this.newMsg,
+                    status: 'sent'
+                    }
+                );
+
+                this.newMsg = '';
             }
         }
     }
