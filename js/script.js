@@ -253,7 +253,6 @@ const app = new Vue(
                 }
             },
             deleteMsg(index){
-                console.log(this.contacts[this.counter].messages);
                 this.contacts[this.counter].messages.splice(index, 1);
             },
             removeBanner(){

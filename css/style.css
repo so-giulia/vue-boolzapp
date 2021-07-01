@@ -424,9 +424,15 @@ footer .container-nested{
     top: 5px;
 }
 
+.sent .chevron::before{
+    content: url(../img/svg/chevron-down.svg);
+}
+
+.received .chevron::before{
+    content: url(../img/svg/chevron-white.svg);
+}
 
 .chevron::before{
-    content: url(../img/svg/chevron-down.svg);
     width: 10px;
     height: 10px;
     z-index: 100;
@@ -451,10 +457,17 @@ footer .container-nested{
     transition: transform .2s ease;
 }
 
+.sent .chevron-show::before{
+    content: url(../img/svg/chevron-down.svg);
+}
+
+.received .chevron-show::before{
+    content: url(../img/svg/chevron-white.svg);
+}
+
 .chevron-show::before{
     opacity: 1;
 
-    content: url(../img/svg/chevron-down.svg);
     width: 10px;
     height: 10px;
     z-index: 100;
@@ -476,6 +489,7 @@ footer .container-nested{
     right:5px;
     bottom:50px;
     z-index: 120;
+    border-radius: 10px;
 
     background-color: #fff;
     font-size: .8rem;
@@ -488,6 +502,7 @@ footer .container-nested{
     top: 35px;
     right:10px;
     z-index: 120;
+    border-radius: 10px;
 
     background-color: #fff;
     font-size: .8rem;
@@ -502,7 +517,21 @@ footer .container-nested{
     color:rgb(42, 45, 48);
 }
 
-.options-sent-active li:hover,
+.options-sent-active li:first-child,
+.options-received-active li:first-child{
+    border-radius: 10px 10px 0 0;
+}
+
+.options-sent-active li:last-child,
+.options-received-active li:last-child{
+    border-radius: 0 0 10px 10px;
+}
+
+.options-sent-active li:hover{
+    background-color: rgb(148, 155, 206);
+    color: rgb(255,255,255);
+}
+
 .options-received-active li:hover{
     background-color: rgb(245, 245, 245);
 }
@@ -517,9 +546,6 @@ footer .container-nested{
     border-radius: 15px 0px 15px 15px;
     align-self: flex-end;
     background-color: rgb(245, 245, 245);
-
-
-
     color: rgb(42, 45, 48);
 }
 

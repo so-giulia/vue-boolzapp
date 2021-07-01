@@ -130,7 +130,7 @@
 
                     <!-- messages start -->
                     <div v-for="(item,index) in (contacts[this.counter].messages)">
-                        
+
                         <!-- message sent start -->
                         <div v-if="item.status=='sent'" class="row justify-start prelative">
                             <div v-if="item.status=='sent'" class="message sent prelative">
@@ -155,9 +155,7 @@
                             </div>
                         </div>
                         <!-- message sent end -->
-
-                        
-                        
+                                                
                         <!-- message received start -->
                         <div v-if="item.status=='received'" class="row justify-end prelative">
                             <div v-if="item.status=='received'" class="message received prelative">
