@@ -4,8 +4,7 @@
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 448 512"
 	 style="enable-background:new 0 0 448 512;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#606060;}
+	.st0{fill:none;stroke:#2A2D30;stroke-width:60;stroke-miterlimit:10;}
 </style>
-<path class="st0" d="M207,381.5L12.7,187.1c-9.4-9.4-9.4-24.6,0-33.9l22.7-22.7c9.4-9.4,24.5-9.4,33.9,0l154.7,154l154.7-154
-	c9.4-9.3,24.5-9.3,33.9,0l22.7,22.7c9.4,9.4,9.4,24.6,0,33.9L241,381.5C231.6,390.8,216.4,390.8,207,381.5L207,381.5z"/>
+<polyline class="st0" points="23.8,142.1 222,340.3 422.2,140.1 "/>
 </svg>

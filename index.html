@@ -8,10 +8,10 @@
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
 
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- FeatherIcons -->
+    <script src="https://unpkg.com/feather-icons"></script>
 
     <!-- My CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -25,47 +25,42 @@
     <title>Boolzapp</title>
 </head>
 <body>
-    <!-- background head start -->
-    <div class="bg-head"></div>
-    <!-- background head end -->
-
     <div id="app">
         <!-- app container start -->
         <div class="app-container row">
             <!-- aside start -->
-            <aside class="row row-vert justify-start">
+            <aside class="row row-vert justify-start prelative">
                 <!-- contacts header start -->
                 <header class="h-90 row justify-between align-center">
                     <!-- user start -->
                     <div class="user-container row justify-start align-center">
                         <img src="img/avatar_io.jpg" alt="My Avatar">
-                        <p class="names">Nome Utente</p>
+                        <p class="names">Ludovica Rossi</p>
                     </div>
                     <!-- user end -->
 
                     <!-- icons start -->
                     <div class="icons-container">
-                        <i class="fas fa-circle-notch"></i>
-                        <i class="fas fa-comment-alt"></i>
-                        <i class="fas fa-ellipsis-v"></i>
+                        <i class="f-ico" data-feather="circle"></i>
+                        <i class="f-ico" data-feather="message-square"></i>
+                        <i class="f-ico" data-feather="more-vertical"></i>
                     </div>
                     <!-- icons end -->
                 </header>
                 <!-- contacts header end -->
 
                 <!-- banner start -->
-                <div class="banner h-90 row justify-between align-center">
-                    <div class="container-nested row align-center">
-                        <div class="bell">
-                            <i class="fas fa-bell-slash bell"></i>
-                        </div>
-
+                <div class="h-90" id="banner">
+                    <div class="container-nested row align-start justify-between">
                         <div class="banner-text-container">
-                            <p class="names">Ricevi notifiche di nuovi messaggi</p>
+                            <p class="p-white">Ricevi notifiche di nuovi messaggi</p>
                             <a href="#">
-                                <p class="p-2">Attiva notifiche desktop</p>
+                                <p class="p-2 p-white">Attiva notifiche desktop</p>
                             </a>
-                        </div>               
+                        </div>
+                        <div class="ico-container" @click="removeBanner()">
+                            <i class="f-ico" data-feather="x"></i>            
+                        </div>
                     </div>
                 </div>
                 <!-- banner end -->
@@ -73,14 +68,14 @@
                 <!-- search start -->
                 <div class="search-container row justify-center align-center">
                     <div class="search-box row align-center">
-                        <i class="fas fa-search"></i>
+                        <i class="f-ico" data-feather="search"></i>
                         <input type="search" name="search" id="search" v-model="search" placeholder="Cerca o inizia una nuova chat">
                     </div>
                 </div>
                 <!-- search end -->
 
                 <!-- contacts body start -->
-                <div class="contacts-body">
+                <div class="contacts-body" id="allcontacts">
                         <!-- contacts start -->
                         <ul class="contacts row align-center" :class="{active: index === activeUl}" v-for="(item, index) in filteredContacts" @click="getChat(item, index)">
                             <li class="container-nested row align-center">
@@ -98,6 +93,9 @@
             </aside>
             <!-- aside end -->
 
+            <div class="vertical-separator"></div>
+
+            
             <!-- main - chat start -->
             <main class="prelative row row-vert">
                 <!-- chat header start -->
@@ -110,7 +108,7 @@
 
                         <!-- username start -->
                         <div id="username-container" class="username-container row row-vert">
-                            Michele
+                            <p>Michele Papi</p>
                             <p class="p-2">Ultimo accesso Oggi alle 6:00</p>
                         </div>
                         <!-- username end -->
@@ -119,9 +117,9 @@
                     
                     <!-- icons start -->
                     <div class="icons-container">
-                        <i class="fas fa-search"></i>
-                        <i class="fas fa-paperclip"></i>
-                        <i class="fas fa-ellipsis-v"></i>
+                        <i class="f-ico" data-feather="search"></i>
+                        <i class="f-ico" data-feather="paperclip"></i>
+                        <i class="f-ico" data-feather="more-vertical"></i>
                     </div>
                     <!-- icons end -->
                 </header>
@@ -195,9 +193,9 @@
                 <!-- footer - chat input start -->
                 <footer class="h-90 row align-center">
                     <div class="msg-container container-nested row justify-between align-center">
-                        <i class="far fa-smile"></i>
+                        <i class="f-ico" data-feather="mic"></i>
+                        <i class="f-ico" data-feather="smile"></i>
                         <input type="text" id="msg" name="msg" v-model="newMsg" placeholder="Scrivi un messaggio" @keyup.enter="writeMsg()">
-                        <i class="fas fa-microphone"></i>
                     </div>
                 </footer>
                 <!-- footer - chat input end -->
@@ -209,5 +207,10 @@
 
     <!-- Script -->
     <script src="js/script.js"></script>
+
+    <!-- Feather script -->
+    <script>
+        feather.replace()
+    </script>
 </body>
 </html>

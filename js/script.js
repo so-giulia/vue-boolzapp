@@ -8,7 +8,7 @@ const app = new Vue(
             activeUl: 0,
             contacts:[
                 {
-                name: 'Michele',
+                name: 'Michele Papi',
                 avatar: '_1',
                 visible: true,
                 messages:[
@@ -34,7 +34,7 @@ const app = new Vue(
                 },
 
                 {
-                name: 'Fabio',
+                name: 'Fabio Pavone',
                 avatar: '_2',
                 visible: true,
                 messages:[
@@ -60,7 +60,7 @@ const app = new Vue(
                 },
 
                 {
-                    name: 'Samuele',
+                    name: 'Samuele Bolli',
                     avatar: '_3',
                     visible: true,
                     messages:[
@@ -86,7 +86,7 @@ const app = new Vue(
                 },
 
                 {
-                    name: 'Luigi',
+                    name: 'Luisa Spagnoli',
                     avatar: '_4',
                     visible: true,
                     messages:[
@@ -112,7 +112,7 @@ const app = new Vue(
                 },
 
                 {
-                    name: 'Andrea',
+                    name: 'Andrea Becchi',
                     avatar: '_5',
                     visible: true,
                     messages:[
@@ -138,7 +138,7 @@ const app = new Vue(
                 },
 
                 {
-                    name: 'Chiara',
+                    name: 'Chiara Mariani',
                     avatar: '_6',
                     visible: true,
                     messages:[
@@ -164,7 +164,7 @@ const app = new Vue(
                 },
 
                 {
-                    name: 'Sara',
+                    name: 'Luca Tordini',
                     avatar: '_7',
                     visible: true,
                     messages:[
@@ -247,6 +247,18 @@ const app = new Vue(
             deleteMsg(index){
                 console.log(this.contacts[this.counter].messages);
                 this.contacts[this.counter].messages.splice(index, 1);
+            },
+            removeBanner(){
+                const ban = document.getElementById("banner");
+                const contactList = document.getElementById("allcontacts");
+
+                if(ban.style.display == "flex") {
+                    ban.className += ' hide';
+                    contactList.className = 'contacts-body';
+                }else{
+                    ban.className += ' hide';
+                    contactList.className = 'contacts-body-expanded';
+                }
             }
         },
         computed: {

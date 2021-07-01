@@ -13,22 +13,49 @@
 /* ——————————————————————————— */
 
 body{
-    background-color: rgb(215, 219, 215);
-    font-family: 'Roboto', sans-serif;
-}
-
-.bg-head{
-    position: absolute;
-    top:0;
-    left:0;
-
-    width: 100%;
-    height: 15vh;
-    background-color: rgb(0, 150, 136);
+    background-color: rgb(229, 229, 227);
+    font-family: 'Questrial', sans-serif;
 }
 
 .prelative{
     position: relative;
+}
+
+.f-ico{
+    width: 20px;
+    height: 20px;
+    stroke-width: 1.5px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+header .f-ico:nth-child(2){
+    margin:0 5px 0 10px;
+}
+
+footer .f-ico{
+    margin-right:10px;
+}
+
+#banner .f-ico{
+    stroke: rgb(255,255,255);
+}
+
+.search-box .f-ico{
+    width:65px;
+    padding:0 10px 0 5px;
+}
+
+input:focus-visible, input:focus{
+    outline: none !important;
+    border:none !important;
+}
+
+.hide{
+    opacity:0 !important;
+    display: none !important;
+
+    transition: opacity .5s ease;
 }
 
 
@@ -64,17 +91,22 @@ body{
 }
 
 .app-container{
-    width:80%;
+    width:85%;
     height:92vh;
 
     position: absolute;
     top:50%;
     left:50%;
     transform:translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 1px 3px 10px rgba(0,0,0,.1);
 }
 
 aside{
-    width: 380px;
+    width: 379px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(42, 45, 48);
+    border-radius: 10px;
 }
 
 main, main footer{
@@ -86,13 +118,36 @@ main, main footer{
 }
 
 .app-container header{
-    background-color: rgb(234, 234, 234);
     padding:0 20px;
+    background-color: rgb(255,255,255);
+    border-bottom: 1px solid rgb(245, 245, 245);
 }
 
-main > header,
+/* main > header,
 main > footer{
-    border-left: 1px solid rgb(214, 214, 214);
+    border-left: 1px solid rgb(245, 245, 245);
+} */
+
+/* .search-container,
+aside > header{
+    border-right: 1px solid rgb(245, 245, 245);
+} */
+
+.vertical-separator{
+    border-right: 1px solid rgb(245, 245, 245);
+}
+
+aside > header{
+    border-radius: 10px 0 0 0;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+main > header{
+    border-radius: 0 10px 0 0;
 }
 
 .app-container header img{
@@ -102,21 +157,19 @@ main > footer{
     margin-right:10px;
 }
 
-.icons-container i{
-    font-size:1.3rem;
-    color: rgb(177, 177, 177);
-    margin-left:15px;
-    cursor: pointer;
-}
-
-
 /* —————————————————————————— */
 /* —————————— Text —————————— */
 /* —————————————————————————— */
 
 .p-2{
+    font-weight: 400;
     color: #757575;
     font-size:.8rem;
+    margin-top: 5px;
+}
+
+.p-white{
+    color: rgb(255,255,255);
 }
 
 /* Message with ellipsis */
@@ -136,8 +189,12 @@ main > footer{
 /* —————————— Aside ————————— */
 /* —————————————————————————— */
 
-.banner{
-    background-color: rgb(142, 218, 252);
+#banner{
+    opacity: 1;
+    display: flex;
+    background-color: rgb(148, 155, 206);
+
+    transition: opacity .5s ease;
 }
 
 .banner-text-container a,
@@ -145,64 +202,51 @@ main > footer{
 .banner-text-container a:focus,
 .banner-text-container a:visited,
 .banner-text-container a:active{
-    color: #757575;
+    color: rgb(255,255,255);
     text-decoration: underline;
 }
 
-.bell{
-    width:3rem;
-    height:3rem;
-    border-radius: 50%;
-    background-color: rgb(255, 255, 255);
-    margin-right:10px;
-}
-
-.bell i{
-    font-size:1.3rem;
-    color: rgb(142, 218, 252);
-    text-align:center;
-    line-height:3rem;
-}
-
 .search-container{
-    height:60px;
-    background-color: rgb(250, 250, 250);
-    padding:10px;
+    height: 60px;
+    padding: 10px 25px;
 }
 
 .search-box{
-    width:100%;
+    width: 100%;
     height: 100%;
-    background-color: rgb(255, 255, 255);
-}
-
-.search-box i{
-    width:65px;
-    padding:0 25px;
-    color: rgb(177, 177, 177);
+    background-color: rgb(245, 245, 245);
+    border-radius: 20px;
 }
 
 .search-box input[type="search"]{
-    height:100%;
-    width:calc(100% - 65px);
-    padding:10px;
-    border:none;
+    height: 100%;
+    width: calc(100% - 85px);
+    background-color: rgb(245, 245, 245);
+    padding: 0px;
+    border: none;
 }
 
 .search-box input[type="search"]::placeholder{
-    color: rgb(216, 217, 218);
+    color: rgb(177, 177, 177);
 }
 
-aside > .contacts-body{
-    background-color: rgb(255, 255, 255);
+.contacts-body{
     height: calc(92vh - 240px);
     overflow-y:scroll;
+
+    transition: height .5s ease;
+}
+
+.contacts-body-expanded{
+    height: calc(92vh - 150px);
+    overflow-y:scroll;
+
+    transition: height .5s ease;
 }
 
 .contacts{
     height:100px;
     width:100%;
-    border-bottom:1px solid rgb(245, 245, 245);
     cursor: pointer;
 }
 
@@ -227,13 +271,14 @@ aside > .contacts-body{
 /* ———————————————————————— */
 
 main footer{
-    background-color: rgb(243, 238, 234);
+    background-color: rgb(255, 255, 255);
 
     position:fixed;
     bottom:0;
     right:0;
     z-index: 10;
     padding:20px 0;
+    border-radius: 0 0 10px 0;;
 } 
 
 footer .container-nested{
@@ -244,7 +289,7 @@ footer .container-nested{
     width:100%;
     height: calc(92vh - 180px);
     max-height: calc(92vh - 180px);
-    background: transparent url(../img/mine.jpg) scroll center repeat;
+    background-color: rgb(255,255,255);
     background-size: 50%;
     padding:20px;
 
@@ -253,12 +298,11 @@ footer .container-nested{
 }
 
 .message{
-    border-radius: 8px;
     padding:12px 20px;
     font-size: .9rem;
-    box-shadow: 0 3px 3px rgba(136, 136, 136, .2);
     margin-bottom: 20px;
     cursor: pointer;
+    color: rgb(255,255,255);
 }
 
 .message > p{
@@ -281,7 +325,7 @@ footer .container-nested{
     height: 80%;
     padding: 0 5px 0 15px;
     margin-left: 15px;
-    background-color: rgb(221, 247, 200);
+    background-color: rgb(245, 245, 245);
     filter: blur(4px);
 
     position: absolute;
@@ -297,7 +341,7 @@ footer .container-nested{
     height: 80%;
     padding: 0 5px 0 15px;
     margin-left: 15px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(148, 155, 206);
     filter: blur(4px);
 
     position: absolute;
@@ -315,7 +359,7 @@ footer .container-nested{
     height: 80%;
     padding: 0 5px 0 15px;
     margin-left: 15px;
-    background-color: rgb(221, 247, 200);
+    background-color: rgb(245, 245, 245);
     filter: blur(4px);
 
     position: absolute;
@@ -334,7 +378,7 @@ footer .container-nested{
     height: 80%;
     padding: 0 5px 0 15px;
     margin-left: 15px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(148, 155, 206);
     filter: blur(4px);
 
     position: absolute;
@@ -418,6 +462,7 @@ footer .container-nested{
     padding: 15px 20px;
     list-style: none;
     cursor: pointer;
+    color:rgb(42, 45, 48);
 }
 
 .options-sent-active li:hover,
@@ -427,12 +472,18 @@ footer .container-nested{
 
 .received{
     align-self: flex-start;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(148, 155, 206);
+    border-radius: 15px 15px 15px 0px;
 }
 
 .sent{
+    border-radius: 15px 0px 15px 15px;
     align-self: flex-end;
-    background-color: rgb(221, 247, 200);
+    background-color: rgb(245, 245, 245);
+
+
+
+    color: rgb(42, 45, 48);
 }
 
 .date{
@@ -440,27 +491,20 @@ footer .container-nested{
     text-align: right;
     font-size: .6rem;
     margin-top: 4px;
-    color: rgb(121, 121, 121);
 }
 
 .msg-container{
     height:100%;
 }
 
-.msg-container i{
-    color: rgb(121, 121, 121);
-    text-align: center;
-    font-size: 1.3rem;
-    cursor: pointer;
-}
-
 .msg-container input[type="text"]{
-    width:calc(100% - 80px);
-    height:100%;
-    border-radius: 10px;
+    width: calc(100% - 70px);
+    height: 100%;
+    border-radius: 50px;
     border: none;
     padding: 0 20px;
-    margin:0 2%;
+    margin: 0;
+    background-color: rgb(245, 245, 245);
 }
 
 input[type="text"]:focus{
@@ -475,27 +519,11 @@ input[type="text"]:focus{
 /* —————————————————————————————— */
 
 ::-webkit-scrollbar{
-    width: 15px;
+    width: 8px;
     background-color: rgb(240, 240, 240);
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color: rgb(177, 177, 177);
-}
-
-::-webkit-scrollbar-button:end:vertical:increment{
-    background: transparent url(../img/svg/chevron-down.svg) scroll no-repeat center;
-    background-size: contain;
-    display: block;
-    height: 15px;
-    width: 15px;
-}
-
-::-webkit-scrollbar-button:start:vertical:decrement{
-    background: transparent url(../img/svg/chevron-up.svg) scroll no-repeat center;
-    background-size: contain;
-    display: block;
-    height: 15px;
-    width: 15px;
-    padding:5px;
+    background-color: rgb(148, 155, 206);
+    border-radius: 50px;
 }
