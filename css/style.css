@@ -110,7 +110,6 @@ aside{
     width: 379px;
     background-color: rgb(255, 255, 255);
     color: rgb(42, 45, 48);
-    border-radius: 10px;
 }
 
 main, main footer{
@@ -127,31 +126,15 @@ main, main footer{
     border-bottom: 1px solid rgb(245, 245, 245);
 }
 
-/* main > header,
-main > footer{
-    border-left: 1px solid rgb(245, 245, 245);
-} */
-
-/* .search-container,
-aside > header{
-    border-right: 1px solid rgb(245, 245, 245);
-} */
-
 .vertical-separator{
     border-right: 1px solid rgb(245, 245, 245);
 }
 
 aside > header{
-    border-radius: 10px 0 0 0;
-
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-}
-
-main > header{
-    border-radius: 0 10px 0 0;
 }
 
 .app-container header img{
@@ -312,7 +295,6 @@ main footer{
     right:0;
     z-index: 10;
     padding:20px 0;
-    border-radius: 0 0 10px 0;;
 } 
 
 footer .container-nested{
@@ -586,6 +568,16 @@ input[type="text"]:focus{
 }
 
 ::-webkit-scrollbar-thumb{
+    background-color: rgb(148, 155, 206);
+    border-radius: 50px;
+}
+
+::-moz-scrollbar{
+    width: 8px;
+    background-color: rgb(240, 240, 240);
+}
+
+::-moz-scrollbar-thumb{
     background-color: rgb(148, 155, 206);
     border-radius: 50px;
 }
