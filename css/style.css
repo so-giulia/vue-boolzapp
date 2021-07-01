@@ -119,6 +119,18 @@ main > footer{
     font-size:.8rem;
 }
 
+/* Message with ellipsis */
+.item-txt-container{
+    width:50%;
+}
+
+.p-cut{
+    width:100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
 
 /* —————————————————————————— */
 /* —————————— Aside ————————— */

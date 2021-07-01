@@ -197,9 +197,10 @@ const app = new Vue(
                 this.activeUl = index;
                 this.counter = index;
 
+                //temporary
                 username.innerHTML = `
                 ${item.name}
-                <p class="p-2">Ultimo accesso alle</p>
+                <p class="p-2">Ultimo accesso Oggi alle 6:00</p>
                 `;
 
             },
@@ -207,7 +208,7 @@ const app = new Vue(
                 if(this.newMsg.length > 0){
                     this.contacts[this.counter].messages.push(
                         {
-                        date: '10/01/2020 15:30:55',
+                        date: dayjs().format("DD/MM/YY HH:mm:ss"),
                         text: this.newMsg,
                         status: 'sent',
                         current: false
@@ -221,7 +222,7 @@ const app = new Vue(
                 setTimeout(() =>{
                     this.contacts[this.counter].messages.push(
                         {
-                        date: '10/01/2020 15:30:55',
+                        date: dayjs().format("DD/MM/YY HH:mm:ss"),
                         text: 'ok',
                         status: 'received',
                         current: false

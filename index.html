@@ -19,6 +19,9 @@
     <!-- Vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
 
+    <!-- DayJs -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+
     <title>Boolzapp</title>
 </head>
 <body>
@@ -82,7 +85,11 @@
                         <ul class="contacts row align-center" :class="{active: index === activeUl}" v-for="(item, index) in filteredContacts" @click="getChat(item, index)">
                             <li class="container-nested row align-center">
                                 <img :src=" 'img/avatar' + item.avatar + '.jpg' " v-bind:alt=" 'Avatar' + item.avatar">
-                                <p class="p-1">{{item.name}}</p>
+                                
+                                <div class="item-txt-container">
+                                    <p class="p-1">{{item.name}}</p>
+                                    <p class="p-2 p-cut">{{ item.messages[item.messages.length-1].text }}</p>
+                                </div>
                             </li> 
                         </ul>
                         <!-- contacts end -->
@@ -98,13 +105,13 @@
                     <!-- user start -->
                     <div id="user-container" class="user-container row justify-start align-center">
                         <!-- avatar start -->
-                        <img :src="'img/avatar' + contacts[this.counter].avatar + '.jpg'" alt="Avatar">
+                        <img :src="'img/avatar' + contacts[this.counter].avatar + '.jpg'" alt="contacts[this.counter].name">
                         <!-- avatar end -->
 
                         <!-- username start -->
                         <div id="username-container" class="username-container row row-vert">
                             Michele
-                            <p class="p-2">Ultimo accesso alle</p>
+                            <p class="p-2">Ultimo accesso Oggi alle 6:00</p>
                         </div>
                         <!-- username end -->
                     </div>
