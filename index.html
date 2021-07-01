@@ -78,7 +78,7 @@
                 <div class="contacts-body" id="allcontacts">
                         <!-- contacts start -->
                         <ul class="contacts row align-center" :class="{active: index === activeUl}" v-for="(item, index) in filteredContacts" @click="getChat(item, index)">
-                            <li class="container-nested row align-center">
+                            <li class="container-nested row align-center" :class="{online: item.visible}">
                                 <img :src=" 'img/avatar' + item.avatar + '.jpg' " v-bind:alt=" 'Avatar' + item.avatar">
                                 
                                 <div class="item-txt-container">
@@ -95,7 +95,7 @@
 
             <div class="vertical-separator"></div>
 
-            
+
             <!-- main - chat start -->
             <main class="prelative row row-vert">
                 <!-- chat header start -->
@@ -136,7 +136,7 @@
                             <div v-if="item.status=='sent'" class="message sent prelative">
                                 <span class="msg-container">
                                     <p>{{item.text}}</p>
-                                    <div class="date">
+                                    <div class="date txt-right">
                                         {{item.date}}
                                     </div>
                                 </span>
@@ -163,7 +163,7 @@
                             <div v-if="item.status=='received'" class="message received prelative">
                                 <span class="msg-container">
                                     <p>{{item.text}}</p>
-                                    <div class="date">
+                                    <div class="date txt-left">
                                         {{item.date}}
                                     </div>
                                 </span>

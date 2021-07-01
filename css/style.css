@@ -37,6 +37,10 @@ footer .f-ico{
     margin-right:10px;
 }
 
+footer .f-ico:last-child{
+    margin-right: 15px;
+}
+
 #banner .f-ico{
     stroke: rgb(255,255,255);
 }
@@ -168,8 +172,20 @@ main > header{
     margin-top: 5px;
 }
 
+.p-online{
+    color: rgb(205, 52, 75);
+}
+
 .p-white{
     color: rgb(255,255,255);
+}
+
+.txt-left{
+    text-align: left;
+}
+
+.txt-right{
+    text-align: right;
 }
 
 /* Message with ellipsis */
@@ -178,7 +194,7 @@ main > header{
 }
 
 .p-cut{
-    width:100%;
+    width:90%;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -250,8 +266,26 @@ main > header{
     cursor: pointer;
 }
 
+.online:after{
+    content: 'online';
+    background-color: rgb(205, 52, 75);
+    border-radius: 10px;
+    margin-left: 10px;
+    font-size: .8rem;
+    color: white;
+    padding: 3px 20px;
+
+    transform: translateX(0);
+    transition: transform .3s ease;
+}
+
 .contacts:hover{
     background-color: rgb(245, 245, 245);
+}
+
+.contacts:hover .online:after{
+    transform: translateX(4px);
+    transition: transform .3s ease;
 }
 
 .active{
@@ -303,10 +337,13 @@ footer .container-nested{
     margin-bottom: 20px;
     cursor: pointer;
     color: rgb(255,255,255);
+    max-width: 50%;
+    line-height: 1.4;
 }
 
 .message > p{
     width:100%;
+    margin-bottom: 10px;
 }
 
 .msg-container{
@@ -488,7 +525,6 @@ footer .container-nested{
 
 .date{
     align-self:flex-end;
-    text-align: right;
     font-size: .6rem;
     margin-top: 4px;
 }
@@ -498,7 +534,7 @@ footer .container-nested{
 }
 
 .msg-container input[type="text"]{
-    width: calc(100% - 70px);
+    width: calc(100% - 75px);
     height: 100%;
     border-radius: 50px;
     border: none;

@@ -10,7 +10,7 @@ const app = new Vue(
                 {
                 name: 'Michele Papi',
                 avatar: '_1',
-                visible: true,
+                visible: false,
                 messages:[
                     {
                     date: '10/01/2020 15:30:55',
@@ -88,7 +88,7 @@ const app = new Vue(
                 {
                     name: 'Luisa Spagnoli',
                     avatar: '_4',
-                    visible: true,
+                    visible: false,
                     messages:[
                         {
                         date: '20/03/2020 16:30:00',
@@ -114,7 +114,7 @@ const app = new Vue(
                 {
                     name: 'Andrea Becchi',
                     avatar: '_5',
-                    visible: true,
+                    visible: false,
                     messages:[
                         {
                         date: '20/03/2020 16:30:00',
@@ -166,7 +166,7 @@ const app = new Vue(
                 {
                     name: 'Luca Tordini',
                     avatar: '_7',
-                    visible: true,
+                    visible: false,
                     messages:[
                         {
                         date: '20/03/2020 16:30:00',
@@ -197,11 +197,17 @@ const app = new Vue(
                 this.activeUl = index;
                 this.counter = index;
 
-                //temporary
-                username.innerHTML = `
-                ${item.name}
-                <p class="p-2">Ultimo accesso Oggi alle 6:00</p>
-                `;
+                if(this.contacts[index].visible){
+                    username.innerHTML = `
+                    ${item.name}
+                    <p class="p-2 p-online">Online</p>
+                    `;
+                }else{
+                    username.innerHTML = `
+                    ${item.name}
+                    <p class="p-2">Ultimo accesso Oggi alle 6:00</p>
+                    `;
+                }
 
             },
             writeMsg(){
@@ -220,14 +226,16 @@ const app = new Vue(
             },
             getReply(){
                 setTimeout(() =>{
-                    this.contacts[this.counter].messages.push(
-                        {
-                        date: dayjs().format("DD/MM/YY HH:mm:ss"),
-                        text: 'ok',
-                        status: 'received',
-                        current: false
-                        }
-                    );
+                    if(this.contacts[this.counter].visible){
+                        this.contacts[this.counter].messages.push(
+                            {
+                            date: dayjs().format("DD/MM/YY HH:mm:ss"),
+                            text: 'ok',
+                            status: 'received',
+                            current: false
+                            }
+                        );
+                    }   
                 }, 1000);
             },
             showSentOptions(index){
